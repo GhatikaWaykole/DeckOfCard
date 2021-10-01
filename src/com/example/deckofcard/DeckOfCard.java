@@ -3,8 +3,12 @@ package com.example.deckofcard;
  * create a deck of cards with concept of object oriented program
  */
 
-public class DeckOfCard {
+import java.util.ArrayList;
+
+public class DeckOfCard{
     public static void main(String args[]){
         System.out.println("wlcome to the deck of cards");
+        Card card =new Card();
+        card.deckOfCards();
     }
 }
