@@ -43,13 +43,13 @@ public class Card{
         System.out.println("Player has cards as below");
         for(int i=0;i<player;i++){
             System.out.println("the player has cards"+i);
-            shuffleCards(arrayList);
+            shuffleCards(arrayList,player);
         }
     }
     /* createshufflecard method to the player
      @param arralylist and temp value
      */
-    public static void shuffleCards(ArrayList<String> arrayList){
+    public static ArrayList<String> shuffleCards(ArrayList<String> arrayList,int player){
         System.out.println("the cards are shuffule properly");
         ArrayList<String> temp = new ArrayList<>();
         while(! arrayList.isEmpty()){
@@ -59,6 +59,18 @@ public class Card{
         }
         arrayList = temp;
         display(arrayList);
+        cardFlowCompute(arrayList,player);
+        return arrayList;
     }
-
+    /* createcardflowCompute to use the player and the cards
+     * @param arraylist and the number to the player
+     */
+    public static void cardFlowCompute(ArrayList<String> arrayList,int player){
+        for(int i=0;i<player;i++){
+            System.out.println("player have"+i+1+"to the below cards");
+            for(int j=0;j<9;j++){
+                System.out.println(arrayList.get(i+j*player));
+            }
+        }
+    }
 }
