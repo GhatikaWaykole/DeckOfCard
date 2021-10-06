@@ -9,6 +9,7 @@ public class DeckOfCard{
     public static void main(String args[]){
         System.out.println("wlcome to the deck of cards");
         Card card =new Card();
+        card.addPlayer();
         card.deckOfCards();
     }
 }
