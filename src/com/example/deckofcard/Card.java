@@ -30,7 +30,7 @@ public class Card{
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the player");
         int player = scanner.nextInt();
-        if(player >2) {
+        if(player >=2) {
             System.out.println("Enter the 2 more than player");
             cardsPlayer(player);
         }
@@ -43,6 +43,22 @@ public class Card{
         System.out.println("Player has cards as below");
         for(int i=0;i<player;i++){
             System.out.println("the player has cards"+i);
+            shuffleCards(arrayList);
         }
     }
+    /* createshufflecard method to the player
+     @param arralylist and temp value
+     */
+    public static void shuffleCards(ArrayList<String> arrayList){
+        System.out.println("the cards are shuffule properly");
+        ArrayList<String> temp = new ArrayList<>();
+        while(! arrayList.isEmpty()){
+            int loc = (int) (Math.random()*arrayList.size());
+            temp.add(arrayList.get(loc));
+            arrayList.remove(loc);
+        }
+        arrayList = temp;
+        display(arrayList);
+    }
+
 }
